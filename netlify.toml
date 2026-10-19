@@ -1,0 +1,6 @@
+# This site is plain static HTML/CSS (with Decap CMS under /admin), so there is
+# no static site generator to run. This overrides the "cecil build" command set
+# in the Netlify UI, which failed because Cecil isn't installed or configured.
+[build]
+  command = "echo 'No build step required'"
+  publish = "."
