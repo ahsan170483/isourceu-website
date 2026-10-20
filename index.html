@@ -1,165 +1,130 @@
-+<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>iSourceU | Apparel & Custom Sourcing</title>
-  <link rel="stylesheet" href="styles.css">
-  <style>
-    :root {
-      --bg-color: #0d0d0d;
-      --card-bg: #161616;
-      --text-color: #f5f5f5;
-      --accent-color: #ffffff;
-      --subtext: #a0a0a0;
-      --border-color: #262626;
-    }
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    }
-    body {
-      background-color: var(--bg-color);
-      color: var(--text-color);
-      line-height: 1.6;
-    }
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px 5%;
-      border-bottom: 1px solid var(--border-color);
-    }
-    .logo {
-      font-weight: 800;
-      font-size: 1.4rem;
-      letter-spacing: 2px;
-      color: var(--accent-color);
-      text-decoration: none;
-    }
-    nav a {
-      color: var(--subtext);
-      text-decoration: none;
-      margin-left: 20px;
-      font-size: 0.9rem;
-      transition: color 0.2s;
-    }
-    nav a:hover {
-      color: var(--accent-color);
-    }
-    .hero {
-      text-align: center;
-      padding: 100px 20px;
-      max-width: 800px;
-      margin: 0 auto;
-    }
-    .hero h1 {
-      font-size: 3rem;
-      font-weight: 900;
-      letter-spacing: 3px;
-      margin-bottom: 15px;
-      text-transform: uppercase;
-    }
-    .hero p {
-      color: var(--subtext);
-      font-size: 1.1rem;
-      margin-bottom: 30px;
-    }
-    .btn {
-      display: inline-block;
-      padding: 12px 28px;
-      background-color: var(--accent-color);
-      color: var(--bg-color);
-      text-decoration: none;
-      font-weight: 700;
-      border-radius: 4px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      font-size: 0.85rem;
-    }
-    .products {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 60px 20px;
-    }
-    .products h2 {
-      font-size: 1.5rem;
-      margin-bottom: 30px;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-    }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-    }
-    .card {
-      background: var(--card-bg);
-      border: 1px solid var(--border-color);
-      padding: 24px;
-      border-radius: 6px;
-    }
-    .card h3 {
-      font-size: 1.1rem;
-      margin-bottom: 8px;
-    }
-    .card p {
-      color: var(--subtext);
-      font-size: 0.9rem;
-    }
-    footer {
-      border-top: 1px solid var(--border-color);
-      padding: 40px 5%;
-      text-align: center;
-      color: var(--subtext);
-      font-size: 0.85rem;
-    }
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>iSourceU — Your Sourcing Simplified</title>
+  <link rel="stylesheet" href="styles.css" />
+  <!-- Netlify Identity Widget for Admin Login -->
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 <body>
 
-  <header>
-    <a href="/" class="logo">iSourceU</a>
+  <!-- Navigation -->
+  <header class="navbar">
+    <div class="logo">iSourceU</div>
     <nav>
-      <a href="#catalogue">Catalogue</a>
-      <a href="/admin/">CMS Admin</a>
+      <a href="#about">What We Do</a>
+      <a href="#products">Products</a>
+      <a href="#how-it-works">How We Work</a>
+      <a href="#contact" class="btn-nav">Get a Quote</a>
     </nav>
   </header>
 
+  <!-- Hero Section -->
   <section class="hero">
-    <h1>ISOURCEU</h1>
-    <p>WEAR RARE. DESIGNED IN AUSTRALIA.</p>
-    <a href="/admin/" class="btn">Manage Catalogue</a>
+    <span class="tagline">BULK APPAREL • CUSTOM MANUFACTURING</span>
+    <h1>Your sourcing, simplified.</h1>
+    <p>From everyday uniforms to custom-made apparel, iSourceU helps businesses across Australia & New Zealand get the right product, made the right way.</p>
+    <div class="hero-btns">
+      <a href="#contact" class="btn-primary">Request a Quote</a>
+      <a href="#products" class="btn-secondary">Browse Range</a>
+    </div>
   </section>
 
-  <section class="products" id="catalogue">
-    <h2>Core Catalogue</h2>
-    <div class="grid">
-      <div class="card">
-        <h3>Polos & Tees</h3>
-        <p>Premium combed cotton and performance fabrics.</p>
-      </div>
-      <div class="card">
-        <h3>Workwear & Hi-Vis</h3>
-        <p>Site-ready compliant jackets and heavy-duty uniforms.</p>
-      </div>
-      <div class="card">
-        <h3>Outerwear</h3>
-        <p>Fleece hoodies and tailored team jackets.</p>
-      </div>
-      <div class="card">
-        <h3>Headwear & Hospitality</h3>
-        <p>Caps, aprons, and built-to-order custom kits.</p>
+  <!-- Products Section -->
+  <section id="products" class="section">
+    <div class="container">
+      <h2>Product Gallery</h2>
+      <p class="section-sub">Quality apparel and custom samples built to your specification.</p>
+      
+      <div class="product-grid" id="product-gallery">
+        <!-- Sample Initial Items (Manageable via /admin) -->
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1521572267360-ee0c2909d518?w=600&auto=format&fit=crop" alt="Heavyweight Cotton T-Shirt" />
+          <div class="card-body">
+            <h3>Heavyweight Cotton Tee</h3>
+            <p>220 GSM combed cotton. Perfect for streetwear drops and staff uniforms.</p>
+          </div>
+        </div>
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1556905055-8f358a7a47b2?w=600&auto=format&fit=crop" alt="Custom Fleece Hoodie" />
+          <div class="card-body">
+            <h3>Custom Fleece Hoodie</h3>
+            <p>380 GSM fleece with custom embroidery, metal eyelets, and bespoke ribbing.</p>
+          </div>
+        </div>
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?w=600&auto=format&fit=crop" alt="Workwear & Polos" />
+          <div class="card-body">
+            <h3>Corporate & Workwear Polos</h3>
+            <p>Breathable, durable fabrics tailored for teams, venues, and industrial wear.</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
+  <!-- How We Work / Video Section -->
+  <section id="how-it-works" class="section dark-section">
+    <div class="container">
+      <h2>How We Work</h2>
+      <p class="section-sub">See how we take your project from brief to bulk manufacturing.</p>
+      
+      <div class="video-grid">
+        <div class="video-card">
+          <div class="video-wrapper">
+            <!-- Replace iframe src or video tag with your video link/embed -->
+            <iframe src="https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ" title="Sampling & Manufacturing Process" allowfullscreen></iframe>
+          </div>
+          <div class="video-info">
+            <h3>01. Sampling & Material Selection</h3>
+            <p>We work through fabric weights, lab dips, and physical samples before going to full production.</p>
+          </div>
+        </div>
+
+        <div class="video-card">
+          <div class="video-wrapper">
+            <iframe src="https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ" title="Custom Branding & Quality Control" allowfullscreen></iframe>
+          </div>
+          <div class="video-info">
+            <h3>02. Embroidery, Print & Finishing</h3>
+            <p>From high-density screen printing to custom neck labels, every detail is checked for quality.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact & CTA -->
+  <section id="contact" class="section">
+    <div class="container contact-container">
+      <h2>Have a project in mind?</h2>
+      <p>Send through your product requirements, quantities, and artwork ideas. We’ll take care of the rest.</p>
+      <div class="contact-details">
+        <p><strong>Phone:</strong> <a href="tel:0415177989">0415 177 989</a></p>
+        <p><strong>Email:</strong> <a href="mailto:connect@isourceu.com.au">connect@isourceu.com.au</a></p>
+        <p><strong>Location:</strong> Adelaide, South Australia (Serving AU & NZ)</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
   <footer>
-    <p>&copy; 2026 iSourceU. All rights reserved. Designed in Australia.</p>
+    <p>© 2026 iSourceU. All rights reserved. | <a href="/admin/">Admin Panel</a></p>
   </footer>
 
+  <!-- Netlify Identity Redirect Script -->
+  <script>
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.on("init", user => {
+        if (!user) {
+          window.netlifyIdentity.on("login", () => {
+            document.location.href = "/admin/";
+          });
+        }
+      });
+    }
+  </script>
 </body>
-</html>         |
-+-----------------------------------------------------------------------+
+</html>
