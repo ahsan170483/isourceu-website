@@ -1,6 +1,18 @@
 # This site is plain static HTML/CSS (with Decap CMS under /admin), so there is
 # no static site generator to run. This overrides the "cecil build" command set
-# in the Netlify UI, which failed because Cecil isn't installed or configured.
+# in the Netlify UI.
 [build]
   command = "echo 'No build step required'"
   publish = "."
+
+# Route CMS admin explicitly
+[[redirects]]
+  from = "/admin/*"
+  to = "/admin/index.html"
+  status = 200
+
+# Catch-all redirect for static SPA/product routing
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
